@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        /* General Styles */
+        body {
+            background-image: linear-gradient(to bottom, rgba(20, 0, 118, 0.77), rgba(0, 0, 0, 0.822)), url('44.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(8, 0, 255, 0.8);
+            padding: 5px 10px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .navbar-brand h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #000000;
+        }
+         
+        /* Burger Button Container */
+        .navbar-toggler {
+            border: none; /* Remove the default border */
+            padding: 5px 10px; /* Adjust padding for better spacing */
+            background-color: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Highlight on hover */
+        }
+
+        /* Custom Burger Icon */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 20px;
+            height: 20px;
+            filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5)); /* Add shadow for depth */
+        }
+
+        /* Change Icon Color */
+        .navbar-toggler-icon:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            transform: scale(1.1); /* Slight zoom-in on hover */
+        }
+
+        /* Smaller Screens (Responsive Adjustments) */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                padding: 8px;
+                background-color: rgba(255, 255, 255, 0.2); /* More prominent on small screens */
+            }
+
+            .navbar-toggler-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+
+         /* General Styles for Courses */
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            gap: 20px;
+            padding: 20px;
+            margin-top: 10px;
+        }
+
+        
+       /* Each Course Card */
+        .course {
+            background-color: rgba(255, 255, 255, 0.927);
+            border-radius: 6px;
+            width: calc(20% - 20px); /* 5 cards per row: 100% / 5 = 20% */
+            margin: 10px 0;
+            padding: 20px;
+            transition: transform 0.4s;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            text-align: center; /* Center text in each card */
+        }
+        /* Responsive Adjustments for smaller screens */
+        @media (max-width: 1200px) {
+            .course {
+                width: calc(25% - 20px); /* 4 cards per row on medium screens */
+            }
+        }
+
+        @media (max-width: 992px) {
+            .course {
+                width: calc(33.333% - 20px); /* 3 cards per row on tablets */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .course {
+                width: calc(50% - 20px); /* 2 cards per row on mobile */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .course {
+                width: calc(100% - 20px); /* 1 card per row on very small screens */
+            }
+        }
+
+
+
+        /* Adjustments for Course Heading */
+        .course h2 {
+            font-size: 18px;
+            color: #000000;
+            font-weight: 700;
+            margin-top: 15px;
+        }
+
+        /* Course Description Text */
+        .course p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #000000;
+        }
+
+        /* List Style for Core Subjects */
+        .course ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .course ul li {
+            font-size: 14px;
+            color: #121212;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        /* Course Images */
+        .course img {
+            height: 100px;
+            width: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        /* Hover Effect for Course Cards */
+        .course:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Centering the Courses */
+        .courses-center {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        /* Responsive Adjustments for Small Screens */
+        @media (max-width: 768px) {
+            .course {
+                width: calc(100% - 20px); /* Full width for small screens */
+                margin-bottom: 20px; /* Increase margin between cards */
+            }
+
+            .course h2 {
+                font-size: 20px; /* Smaller text for headings */
+            }
+
+            .course p, .course ul li {
+                font-size: 15px; /* Smaller text for descriptions and list items */
+            }
+
+            .course img {
+                height: 80px; /* Smaller image size */
+            }
+        }
+
+/* Adjust logo and text for smaller screens */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .navbar-brand h1 {
+        font-size: 18px;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+}
+
+
+
+        /* Footer */
+        footer {
+            background-color: rgba(8, 0, 255, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 15px;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="hgb logo.jpg" alt="HGB Logo" class="me-2">
+                <h1 class="mb-0 h5 text-nowrap">HGBaquiran College</h1>
+                </a>
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+                            <h1  style="text-align: center; margin-top: 2%;">Our Academic Offerings</h1>
+                            <p style="text-align: center; color: rgb(234, 231, 231);">Explore the variety of programs we offer</p>
+
+                            <section class="courses">
+                                <div class="course" id="BSBA">
+                                    <span><img src="B.A.webp" alt=""></span>
+                                    <h2>BS Business Administration (BSBA)</h2>
+                                    <p>This program focuses on developing skills in business management, strategy, and leadership to help students excel in the corporate world.</p>
+                                    <ul>
+                                        <li>Core Subjects: Marketing, Financial Management, Organizational Behavior</li>
+                                        <li>Duration of Learning: 4 Years</li>
+                                        <li>Career Opportunities: Manager, Business Consultant, Entrepreneur</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course" id="BSIT">
+                                    <span><img src="I.T.webp" alt=""></span>
+                                    <h2>BS Information Technology (BSIT)</h2>
+                                    <p>BSIT is designed to train students in various aspects of information technology, from software development to network management.</p>
+                                    <ul>
+                                        <li>Core Subjects: Programming, Database Management, Networking</li>
+                                        <li>Duration of Learning: 4 Years</li>
+                                        <li>Career Opportunities: IT Specialist, Web Developer, Network Administrator</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course" id="ACT">
+                                    <span><img src="I.T.webp" alt=""></span>
+                                    <h2>BS Information Technology (ACT)</h2>
+                                    <p>BSIT is designed to train students in various aspects of information technology, from software development to network management.</p>
+                                    <ul>
+                                        <li>Core Subjects: Programming, Database Management, Networking</li>
+                                        <li>Duration of Learning: 2 Years</li>
+                                        <li>Career Opportunities: IT Specialist, Web Developer, Network Administrator</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course" id="BSCRIM">
+                                    <span><img src="BCRIM.webp" alt=""></span>
+                                    <h2>BS Criminology (BSCRIM)</h2>
+                                    <p>This course aims to equip students with knowledge on criminal law, forensic science, and crime prevention methods.</p>
+                                    <ul>
+                                        <li>Core Subjects: Criminal Law, Forensic Psychology, Crime Scene Investigation</li>
+                                        <li>Duration of Learning: 4 Years</li>
+                                        <li>Career Opportunities: Police Officer, Forensic Analyst, Criminal Investigator</li>
+                                    </ul>
+                                </div>
+
+                                <div class="course" id="BSHM">
+                                    <span><img src="H.M.webp" alt=""></span>
+                                    <h2>BS Hospitality Management (BSHM)</h2>
+                                    <p>The BSHM program prepares students to manage and operate businesses in the hospitality and tourism industry.</p>
+                                    <ul>
+                                        <li>Core Subjects: Hotel Operations, Event Management, Tourism Planning</li>
+                                        <li>Duration of Learning: 4 Years</li>
+                                        <li>Career Opportunities: Hotel Manager, Event Planner, Tourism Coordinator</li>
+                                    </ul>
+                                </div>
+                                <div class="course" id="BSED">
+                                    <span><img src="B.E.webp" alt=""></span>
+                                    <h2>BS Education (BSED)</h2>
+                                    <p>The BSED program is designed for those aspiring to be effective educators, with a focus on curriculum development and teaching strategies.</p>
+                                    <ul>
+                                        <li>Core Subjects: Educational Psychology, Curriculum Design, Classroom Management</li>
+                                        <li>Duration of Learning: 4 Years</li>
+                                        <li>Career Opportunities: Teacher, Education Coordinator, School Administrator</li>
+                                    </ul>
+                                </div>
+                            
+                                <div class="course" id="BEED">
+                                    <span><img src="B.E.webp" alt=""></span>
+                                    <h2>BEED (Bachelor of Elementary Education)</h2>
+                                    <p>BEED focuses on preparing students to become competent elementary school teachers, with an emphasis on child development and teaching methodologies.</p>
+                                    <ul>
+                                        <li>Core Subjects: Child Development, Educational Technology, Teaching Methods</li>
+                                        <li>Duration of Learning: 4 Years</li>
+                                        <li>Career Opportunities: Elementary Teacher, Education Specialist, School Counselor</li>
+                                    </ul>
+                                </div>
+                             </section>
+            
+                                
+                                    
+                                
+
+    <!-- Footer Section -->
+    <footer>
+        <p>
+            &copy; 2024 HGBaquiran College. All Rights Reserved. 
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+</html>

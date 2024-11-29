@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        /* General Styles */
+        body {
+            background-image: linear-gradient(to bottom, rgba(20, 0, 118, 0.77), rgba(0, 0, 0, 0.822)), url('background.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .navbar-brand h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #000000;
+        }
+         
+
+        /* Header issue */
+        header {
+            background-color: transparent; /* Set the header background to transparent */
+            padding: 0; /* Remove padding from header */
+        }
+
+        .navbar {
+            background-color: rgba(8, 0, 255, 0.8); /* Apply the background color only to the navbar */
+            padding: 5px 10px;
+        }
+
+        .hero-section {
+            background-color: rgba(8, 0, 255, 0); /* Set background color for the hero section */
+            padding: 5rem 0; /* Adjust padding to give space around text */
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .hero-section .btn-primary {
+            background-color: #004bd5; /* Ensure the button color matches */
+        }
+
+        .hero-section .btn-primary:hover {
+            background-color: #0033a0; /* Darken the button color on hover */
+        }
+        .hero-section h1 span {
+            font-weight: bold;
+            color: rgb(57, 130, 220);
+        }
+        /* Burger Button Container */
+        .navbar-toggler {
+            border: none; /* Remove the default border */
+            padding: 5px 10px; /* Adjust padding for better spacing */
+            background-color: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Highlight on hover */
+        }
+
+        /* Custom Burger Icon */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 20px;
+            height: 20px;
+            filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5)); /* Add shadow for depth */
+        }
+
+        /* Change Icon Color */
+        .navbar-toggler-icon:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            transform: scale(1.1); /* Slight zoom-in on hover */
+        }
+
+        /* Smaller Screens (Responsive Adjustments) */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                padding: 8px;
+                background-color: rgba(255, 255, 255, 0.2); /* More prominent on small screens */
+            }
+
+            .navbar-toggler-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+
+        @keyframes fireFlicker {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -60%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+}
+
+.hero-section .btn-primary {
+  position: relative;
+  display: inline-block;
+  background-color: #004bd5; 
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 70, 213, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.hero-section .btn-primary:hover {
+  transform: scale(1.1);
+}
+
+/* Flames: Layer 1 */
+.hero-section .btn-primary::before,
+.hero-section .btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  animation: fireFlicker 1s infinite alternate ease-in-out;
+}
+
+.hero-section .btn-primary::before {
+  background: radial-gradient(
+    circle,
+    rgba(0, 150, 255, 0.8), 
+    rgba(0, 100, 200, 0.5), 
+    transparent
+  );
+  filter: blur(10px);
+}
+
+.hero-section .btn-primary::after {
+  background: radial-gradient(
+    circle,
+    rgba(0, 100, 255, 0.7), 
+    rgba(0, 70, 213, 0.4), 
+    transparent
+  );
+  filter: blur(20px);
+  animation-delay: 0.5s;
+}
+
+
+/* Adjust logo and text for smaller screens */
+@media (max-width: 768px) {
+    .navbar-brand img {
+        height: 30px;
+        width: 30px;
+    }
+
+    .navbar-brand h1 {
+        font-size: 18px;
+    }
+
+    .navbar-toggler {
+        margin-left: auto;
+    }
+}
+
+
+
+
+
+    .card {
+      position: relative;
+      background-color: rgba(255, 255, 255, 0);
+      color: #000000d5;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      
+    }
+
+    .card h5 {
+      color: rgba(25, 0, 255, 0.856);
+    }
+
+    .card .btn-primary {
+      background-color: rgba(25, 0, 255, 0.856);
+      border: none;
+    }
+
+    .card .btn-primary:hover {
+      background-color: rgba(25, 0, 255, 0.7);
+    }
+
+    .text-white {
+      color: white;
+    }
+
+    .logo-circle {
+      border-radius: 50%;
+    }
+    
+  .card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgba(0, 0, 0, 0.621)), url('1.jpg');
+    z-index: -1; 
+  }
+
+  .card-body {
+    position: relative;
+    z-index: 1; 
+    padding: 20px;
+  }
+  
+
+
+
+
+
+        /* Footer */
+        footer {
+            background-color: rgba(8, 0, 255, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 15px;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+  
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="hgb logo.jpg" alt="HGB Logo" class="me-2">
+                <h1 class="mb-0 h5 text-nowrap">HGBaquiran College</h1>
+            </a>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="LoginPage.html" onclick="logoutAlert()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+    
+  <header class="hero-section text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">
+        Welcome to 
+        <span>HGBaquiran College</span>
+      </h1>
+      <p class="lead">"Success starts here at HGBaquiran College, where your future takes shape."</p>   
+              <a href="addform.html" class="btn btn-lg btn-primary mt-3" target="_blank">
+                Enroll Now!
+              </a>
+              
+    </div>
+  </header>
+  
+
+  <div class="container">
+    <section class="py-4">
+      <div class="row">
+        <!-- Courses Card with Gradient Background -->
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 shadow-lg">
+            <div class="card-img-top" style="background-image: url('1.jpg');"></div> <!-- Set image as background -->
+            <div class="card-body">
+              <h5 class="card-title fw-bold">
+                Courses
+              </h5>
+              <p class="card-text">
+                Discover Your Passion
+              </p><br>
+              <a href="course.html" class="btn btn-primary" id="btnCourse">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 shadow-lg">
+            <div class="card-img-top" style="background-image: url('2.jpg');"></div> <!-- Set image as background -->
+            <div class="card-body">
+              <h5 class="card-title fw-bold">
+                About Us
+              </h5>
+              <p class="card-text">
+                Building Your Bright Future
+              </p><br>
+              <a href="about.html" class="btn btn-primary" id="btnAbout">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Us Card with Gradient Background -->
+        <div class="col-lg-4 mb-4">
+          <div class="card h-100 shadow-lg card-dark">
+            <div class="card-img-top" style="background-image: url('4.jpg');"></div> <!-- Set image as background -->
+            <div class="card-body">
+              <h5 class="card-title fw-bold">
+                Contact Us
+              </h5>
+              <p class="card-text">
+                Get in Touch
+              </p><br>
+              <a href="contact.html" class="btn btn-primary" id="btnContact">
+                Learn More
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+            <script>
+              function logoutAlert() {
+                alert('You have logged out successfully!');
+              }
+            </script>
+
+    
+</body>
+</html>

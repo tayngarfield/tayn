@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        /* General Styles */
+        body {
+            background-image: linear-gradient(to bottom, rgba(20, 0, 118, 0.77), rgba(0, 0, 0, 0.822)), url('B.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(8, 0, 255, 0.8);
+            padding: 5px 10px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .navbar-brand h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .navbar-nav .nav-item {
+            margin-left: 15px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #000000;
+        }
+         
+        /* Burger Button Container */
+        .navbar-toggler {
+            border: none; /* Remove the default border */
+            padding: 5px 10px; /* Adjust padding for better spacing */
+            background-color: rgba(255, 255, 255, 0.1); /* Light background for visibility */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+        }
+
+        .navbar-toggler:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Highlight on hover */
+        }
+
+        /* Custom Burger Icon */
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            width: 20px;
+            height: 20px;
+            filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.5)); /* Add shadow for depth */
+        }
+
+        /* Change Icon Color */
+        .navbar-toggler-icon:hover {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%280, 0, 0, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+            transform: scale(1.1); /* Slight zoom-in on hover */
+        }
+
+        /* Smaller Screens (Responsive Adjustments) */
+        @media (max-width: 768px) {
+            .navbar-toggler {
+                padding: 8px;
+                background-color: rgba(255, 255, 255, 0.2); /* More prominent on small screens */
+            }
+
+            .navbar-toggler-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+
+
+
+        section {
+            margin-top: px;
+            margin-bottom: 50px;
+            }
+
+            h2 {
+            color:rgba(255, 255, 255, 0.856);
+            text-align:center;
+            margin: auto;
+            }
+            p{
+               
+               text-align: center;
+               margin-left: 25%;
+               max-width: 50%;
+            }
+            li{
+               
+               margin-left: 50%;
+               max-width: 20%;
+            }
+      
+      
+      
+            /* Adjust logo and text for smaller screens */
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 30px;
+                width: 30px;
+            }
+
+            .navbar-brand h1 {
+                font-size: 18px;
+            }
+
+            .navbar-toggler {
+                margin-left: auto;
+            }
+        }
+
+
+
+        /* Footer */
+        footer {
+            background-color: rgba(8, 0, 255, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 15px;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="hgb logo.jpg" alt="HGB Logo" class="me-2">
+                    <h1 class="mb-0 h5 text-nowrap">HGBaquiran College</h1>
+                </a>
+                <button 
+                    class="navbar-toggler" 
+                    type="button" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="course.html">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
+          <br><h2>About Us</h2>
+          <p>Welcome to HGBaquiran College, where we are dedicated to providing quality education and fostering a supportive learning environment. Our mission is to empower students to achieve their academic and personal goals.</p>
+          <p>Founded in 2003, HGBaquiran College has a rich history of excellence in education. We offer a variety of programs designed to meet the diverse needs of our students.</p>
+        </section>
+    
+        <section class="services">
+          <h2>Our Services</h2>
+          <ul>
+            <li>Academic Counseling</li>
+            <li>Extracurricular Activities</li>
+            <li>Career Services</li>
+            <li>Student Support Services</li>
+          </ul>
+        </section>
+    
+        <section class="mission">
+          <h2>Our Mission</h2>
+          <p>At HGBaquiran College, our mission is to inspire and prepare students for success in their chosen fields through innovative teaching, research, and community engagement.</p>
+        </section><br>
+      </main>
+    <!-- Footer Section -->
+    <footer>
+        <p>
+            &copy; 2024 HGBaquiran College. All Rights Reserved. 
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </p>
+    </footer>
+</body>
+</html>
